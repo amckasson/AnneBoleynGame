@@ -219,8 +219,9 @@ namespace AnneBoleynEscape
             Console.Clear();
             Console.WriteLine("Now back in the room below, she sees the only is to continue on to the door across the room that she has not tried yet; hoping that it opens\n" +
                 "Choose a number:\n" +
-                "1. Try the other door.\n" +
-                "2. Try yelling to see who comes.");
+                "1. Try the other door.\n" 
+                //"2. Try yelling to see who comes."
+                );
             //Console.ReadLine();
 
             string input = Console.ReadLine();
@@ -231,10 +232,10 @@ namespace AnneBoleynEscape
                 case "one":
                     MainRoomTwoDoorTwo();
                     break;
-                case "2":
-                case "Two":
-                    YellMethod();
-                    break;
+                //case "2":
+                //case "Two":
+                    //YellMethod();
+                    //break;
                 default:
                     Console.WriteLine("Please choose a valid number");
                     Console.ReadLine();
@@ -343,7 +344,7 @@ namespace AnneBoleynEscape
         {
             Console.Clear();
             Console.WriteLine("As Anne steps out into the bright morning sunlight, she can see a huge crowd forming a large, semicircle around a central object.\n" +
-                "As she draws closer, two large men wearing black hods obscuring their faces grab each of her arms. Too late she realizes that she has willingly\n" +
+                "As she draws closer, two large men wearing black hoods obscuring their faces grab each of her arms. Too late she realizes that she has willingly\n" +
                 "walked herself to her own execution!");
             Console.ReadLine();
 
