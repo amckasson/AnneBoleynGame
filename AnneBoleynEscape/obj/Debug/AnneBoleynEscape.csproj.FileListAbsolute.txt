@@ -5,3 +5,10 @@ C:\Users\Andrew\Desktop\ElevenFiftyProjects\GoldBadge\Assignments\AnneBoleynEsca
 C:\Users\Andrew\Desktop\ElevenFiftyProjects\GoldBadge\Assignments\AnneBoleynEscapeToFreedom\AnneBoleynEscape\obj\Debug\AnneBoleynEscape.csproj.CoreCompileInputs.cache
 C:\Users\Andrew\Desktop\ElevenFiftyProjects\GoldBadge\Assignments\AnneBoleynEscapeToFreedom\AnneBoleynEscape\obj\Debug\AnneBoleynEscape.exe
 C:\Users\Andrew\Desktop\ElevenFiftyProjects\GoldBadge\Assignments\AnneBoleynEscapeToFreedom\AnneBoleynEscape\obj\Debug\AnneBoleynEscape.pdb
+C:\Users\tadlu\Desktop\ElevenFiftyProjects\AnneBoleynGame\AnneBoleynEscape\bin\Debug\AnneBoleynEscape.exe.config
+C:\Users\tadlu\Desktop\ElevenFiftyProjects\AnneBoleynGame\AnneBoleynEscape\bin\Debug\AnneBoleynEscape.exe
+C:\Users\tadlu\Desktop\ElevenFiftyProjects\AnneBoleynGame\AnneBoleynEscape\bin\Debug\AnneBoleynEscape.pdb
+C:\Users\tadlu\Desktop\ElevenFiftyProjects\AnneBoleynGame\AnneBoleynEscape\obj\Debug\AnneBoleynEscape.csprojAssemblyReference.cache
+C:\Users\tadlu\Desktop\ElevenFiftyProjects\AnneBoleynGame\AnneBoleynEscape\obj\Debug\AnneBoleynEscape.csproj.CoreCompileInputs.cache
+C:\Users\tadlu\Desktop\ElevenFiftyProjects\AnneBoleynGame\AnneBoleynEscape\obj\Debug\AnneBoleynEscape.exe
+C:\Users\tadlu\Desktop\ElevenFiftyProjects\AnneBoleynGame\AnneBoleynEscape\obj\Debug\AnneBoleynEscape.pdb

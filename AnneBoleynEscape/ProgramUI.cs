@@ -295,6 +295,7 @@ namespace AnneBoleynEscape
                         "as long as she's standing on the stool. Henry is much taller than her!\n" +
                         "Suddenly, a flash of movement in the mirror catches her eye, but too late!" +
                         "\n\n\nA French assassin, mistaking her for Henry, has stabbed HER in the back instead!" );
+                    Console.ReadLine();
                     YouDied();
                     break;
                 default:
@@ -316,6 +317,8 @@ namespace AnneBoleynEscape
 
         private void YouDied()
         {
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.Clear();
             Console.WriteLine("Henry's scheming has caught up with you.\n\n\n" +
                 "YOU ARE DEAD.");
             Console.ReadLine();
