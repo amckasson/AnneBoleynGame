@@ -218,7 +218,7 @@ namespace AnneBoleynEscape
             Console.ReadLine();
             Console.Clear();
             Console.WriteLine("Now back in the room below, she sees the only is to continue on to the door across the room that she has not tried yet; hoping that it opens\n" +
-                "Choose a number:" +
+                "Choose a number:\n" +
                 "1. Try the other door.\n" +
                 "2. Try yelling to see who comes.");
             //Console.ReadLine();
@@ -332,6 +332,10 @@ namespace AnneBoleynEscape
                     _arnold.AlternateHistory();
                     _keepRunning = false;
                     break;
+                default:
+                    Console.WriteLine("You hesistate at the turning point!");
+                    YouDied();
+                        break;
             }
         }
 
