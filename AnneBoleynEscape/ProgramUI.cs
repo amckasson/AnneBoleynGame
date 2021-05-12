@@ -8,6 +8,7 @@ namespace AnneBoleynEscape
 {
     public class ProgramUI
     {
+        private Room _arnold = new Room();
         public bool _keepRunning = true;
         public bool _bedroomKey = false;
         //public bool _isAlive = true;
@@ -55,7 +56,7 @@ namespace AnneBoleynEscape
             Console.WriteLine("You walk over to the bed.");
             Console.ReadLine();
             Console.Clear();
-            Console.WriteLine("What do you want to do Anne?\n" +
+            Console.WriteLine("What do you want to do Anne? Choose a number:\n" +
                 "1. Pull back the sheets, and try to get some rest.\n" +
                 "2. Check under the pillow.\n" +
                 "3. Walk away from the bed.");
@@ -139,9 +140,9 @@ namespace AnneBoleynEscape
         private void HallwayOne()
         {
             Console.Clear();
-            Console.WriteLine("Anne you made it out of the Room!\n" +
+            Console.WriteLine("Anne makes it out of the Room!\n" +
                 "The hallway is dark. There seems to be a dead end to the left.\n But there is a door in front of you, and one down hall to the right.\n" +
-                "What do you want to do?\n" +
+                "What do you want to do?Choose a number:\n" +
                 "1. Try the door in front of me.\n" +
                 "2. Try the door to the right. ");
 
@@ -182,7 +183,7 @@ namespace AnneBoleynEscape
             Console.WriteLine("Anne you made it into the next room. \n" +
                 "There doesn't seem to be anyone in here.\n" +
                 "You can see that there are two more doors; one to left, and another to the right.\n" +
-                "What door would you like to choose?\n" +
+                "What door would you like to try? Choose a number:\n" +
                 "1. Door to the right.\n" +
                 "2. Door to the left.");
 
@@ -217,6 +218,7 @@ namespace AnneBoleynEscape
             Console.ReadLine();
             Console.Clear();
             Console.WriteLine("Now back in the room below, she sees the only is to continue on to the door across the room that she has not tried yet; hoping that it opens\n" +
+                "Choose a number:" +
                 "1. Try the other door.\n" +
                 "2. Try yelling to see who comes.");
             //Console.ReadLine();
@@ -247,7 +249,8 @@ namespace AnneBoleynEscape
             Console.WriteLine("Miraculously, the door opens and leads to a winding starcase going down.\n" +
                 "Anne approaches the top of the staircase that corkscrews down to the bottom floor of the tower.\n" +
                 "As she descends, she can hear a crowd cheering outside in the courtyard. Who could be celebrating such a dire situation?\n" +
-                "As she reaches the bottom of the stairs, there is a door to her left, and the double door leading out to the courtyard. Choose a number to explore that room:\n" +
+                "As she reaches the bottom of the stairs, there is a door to her left, and the double door leading out to the courtyard.\n" +
+                " Choose a number to explore that room:\n" +
                 "1. Door to the left\n" +
                 "2. Double doors straight ahead");
 
@@ -276,7 +279,7 @@ namespace AnneBoleynEscape
             Console.Clear();
             Console.WriteLine("The door swings inward onto a large, lavishly decorated room. Rows upon rows of gaudy outfits hang from large racks.\n" +
                 "The cloths are brightly colored, and are for a very large man. Anne realizes she has stumbled into one of Henry's many rooms,\n" +
-                "each one displaying his many colorful outfits for any occasion. An idea slowly dawns on Anne. Choose one:\n" +
+                "each one displaying his many colorful outfits for any occasion. An idea slowly dawns on Anne. Choose a number:\n" +
                 "1. No, it's a stupid idea. Best not to get caught in here!\n" +
                 "2. Put on one of Henry's outfits in an attempt to disguise yourself.");
 
@@ -286,7 +289,7 @@ namespace AnneBoleynEscape
             {
                 case "1":
                 case "one":
-                    MainRoomTwoDoorTwo();
+                    Corridor();
                     break;
                 case "2":
                 case "two":
@@ -306,12 +309,39 @@ namespace AnneBoleynEscape
             }
         }
 
+        private void Corridor()
+        {
+            Console.Clear();
+            Console.WriteLine("Back at the bottom of the stairs, your only option now is to go through the double doors, out to the noisy courtyard.\n" +
+                "But... you are starting to suspect something isn't right here. Is this some sort of sick surprise from Henry?\n" +
+                "Your birthday is coming up... but he's also not been very pleased with you lately...\n" +
+                "Choose a number:\n" +
+                "1. Proceed through the double doors into the courtyard, ready for your big party!\n" +
+                "2. Pray for guidance.");
+
+            string input = Console.ReadLine();
+
+            switch (input.ToLower())
+            {
+                case "1":
+                case "one":
+                    Courtyard();
+                    break;
+                case "2":
+                case "two":
+                    _arnold.AlternateHistory();
+                    break;
+            }
+        }
+
         private void Courtyard()
         {
             Console.Clear();
             Console.WriteLine("As Anne steps out into the bright morning sunlight, she can see a huge crowd forming a large, semicircle around a central object.\n" +
                 "As she draws closer, two large men wearing black hods obscuring their faces grab each of her arms. Too late she realizes that she has willingly\n" +
                 "walked herself to her own execution!");
+            Console.ReadLine();
+
             YouDied();
         }
 
@@ -320,11 +350,9 @@ namespace AnneBoleynEscape
             Console.BackgroundColor = ConsoleColor.Red;
             Console.Clear();
             Console.WriteLine("Henry's scheming has caught up with you.\n\n\n" +
-                "YOU ARE DEAD.");
+                "YOU ARE DEAD.\n");
             Console.ReadLine();
             _keepRunning = false;
-            //Dead
         }
-
     }
 }
