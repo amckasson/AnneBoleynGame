@@ -8,19 +8,20 @@ namespace AnneBoleynEscape
 {
     public class ProgramUI
     {
+        public bool _keepRunning = true;
         public bool _bedroomKey = false;
+        //public bool _isAlive = true;
         //public static Room annesRoom = new Room
         public void Run()
         {
-            bool keepRunning = true;
-            while (keepRunning)
-            { 
-
             Console.Clear();
             Console.WriteLine("Anne, things with Henry aren't working out.  He's stuck you in the\n" +
                 "Tower of London until your execution.  You should probably try to get out of here\n" +
                 "while you still can. ");
             Console.ReadLine();
+            
+            while (_keepRunning)
+            { 
             Console.Clear();
             Console.WriteLine("Anne, seriously it's time to get moving choose an action:\n" +
                 "1. Go over to the bed.\n" +
@@ -86,6 +87,8 @@ namespace AnneBoleynEscape
                 "Anne wakes up to a group of guards in the morning; they take her out to a courtyard\n" +
                 "and cut her head off.  The last thought through her mind is about the overratedness of pious dating.  ");
             Console.ReadLine();
+            Console.Clear();
+            YouDied();
         }
         private void LookUnderPillow()
         {
@@ -111,9 +114,13 @@ namespace AnneBoleynEscape
                 Console.WriteLine("The door looks very sturdy.  Anne tries the handle. \n" +
                     "She is not surprised to find that its locked.  Maybe there's a key somewhere.");
             }
-            else 
+            else
             {
                 Console.WriteLine("The key from under the pillow fits the lock.  Anne uses it to leave the room.");
+                Console.ReadLine();
+                //Test
+                HallwayOne();
+                //test end
             }
             Console.ReadLine();
         }
@@ -124,6 +131,50 @@ namespace AnneBoleynEscape
             Console.WriteLine("Anne starts yelling like a lunatic, no one seems to react.\n" +
                 "She begins to wonder if there are any guards outside");
             Console.ReadLine();
+        }
+        //Hallway test methods
+        private void HallwayOne()
+        {
+            Console.Clear();
+            Console.WriteLine("Anne you made it out of the Room!\n" +
+                "The hallway is dark. There seems to be a dead end to the left.\n But there is a door in front of you, and one down hall to the right.\n" +
+                "What do you want to do?\n" +
+                "1. Try the door in front of me.\n" +
+                "2. Try the door to the right. ");
+
+            string input = Console.ReadLine();
+
+            switch (input.ToLower())
+            {
+                case "1":
+                case "one":
+                    HallwayRoomOne();
+                    break;
+                case "2":
+                case "two":
+                    break;
+                //default "Not an option.":
+                        //break;
+            }
+        }
+
+        private void HallwayRoomOne()
+        {
+            Console.Clear();
+            Console.WriteLine("Anne you have stumbled upon the exectioner. \n" +
+                "He's readying his axe for your neck. The timing couldn't be worse. \n" +
+                "You walk into his practice swing and lose your head!");
+            Console.ReadLine();
+            Console.Clear();
+            YouDied();
+        }
+
+        private void YouDied()
+        {
+            Console.WriteLine("Henry's scheming has caught up with you.\n\n\n" +
+                "YOU ARE DEAD.");
+            Console.ReadLine();
+            _keepRunning = false;
         }
     }
 }
