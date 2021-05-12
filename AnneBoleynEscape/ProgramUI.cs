@@ -175,6 +175,7 @@ namespace AnneBoleynEscape
                 "YOU ARE DEAD.");
             Console.ReadLine();
             _keepRunning = false;
+            //Dead
         }
     }
 }
