@@ -76,6 +76,9 @@ namespace AnneBoleynEscape
                 case "three":
                     WalkAwayFromBed();
                     break;
+                default:
+                    Console.WriteLine("Please enter a valid number");
+                    break;
             }
         }
 
@@ -152,9 +155,13 @@ namespace AnneBoleynEscape
                     break;
                 case "2":
                 case "two":
+                    HallwayRoomTwoMainRoom();
                     break;
-                //default "Not an option.":
-                        //break;
+                default:
+                    Console.WriteLine("Please enter a valid number");
+                    Console.ReadLine();
+                    HallwayOne();
+                        break;
             }
         }
 
@@ -167,6 +174,34 @@ namespace AnneBoleynEscape
             Console.ReadLine();
             Console.Clear();
             YouDied();
+        }
+
+        private void HallwayRoomTwoMainRoom()
+        {
+            Console.Clear();
+            Console.WriteLine("Anne you made it into the next room. \n" +
+                "There doesn't seem to be anyone in here.\n" +
+                "You can see that there are two more doors; one to left, and another to the right.\n" +
+                "What door would you like to choose?\n" +
+                "1. Door to the right.\n" +
+                "2. Door to the left.");
+
+            string input = Console.ReadLine();
+
+            switch (input.ToLower())
+            {
+                case "1":
+                case "one":
+                    break;
+                case "2":
+                case "two":
+                    break;
+                default:
+                    Console.WriteLine("Please enter a valid number");
+                    HallwayRoomTwoMainRoom();
+                    break;
+            }
+
         }
 
         private void YouDied()
