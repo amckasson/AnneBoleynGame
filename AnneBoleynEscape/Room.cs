@@ -19,6 +19,14 @@ namespace AnneBoleynEscape
                 "As he looks down at you, you think you see his eyes glint red... just for a moment. But... that's not posible... is it?\n" +
                 "\"Come with me if you want to live,\" he says in a deep voice. Your cultured ear picks up an Austrian accent? How can this be?");
 
+            Console.Beep(400, 350);
+            Console.Beep(450, 350);
+            Console.Beep(480, 1100);
+            Console.Beep(450, 500);
+            Console.Beep(360, 500);
+            Console.Beep(300, 1100);
+
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             YouAreQueen();
             
@@ -31,6 +39,8 @@ namespace AnneBoleynEscape
                 "and even Henry himself! The crowd is hushed and as your guardian stands behind you, they bow down.\n" +
                 "\"All hail Queen Anne!\" they cheer. And why not? You were always better than Henry ever was on the throne.\n\n\n\n" +
                 "Congratulations, you have survived and changed history!");
+
+            Console.WriteLine("Press any key to exit game.");
 
             //_isRunning = false; doesnt work this way -- check back in ProgramUI under _arnold for the fix
         }

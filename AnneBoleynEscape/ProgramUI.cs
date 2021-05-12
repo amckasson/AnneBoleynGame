@@ -15,10 +15,13 @@ namespace AnneBoleynEscape
         //public static Room annesRoom = new Room
         public void Run()
         {
+            TitlePage();
+
             Console.Clear();
             Console.WriteLine("Anne, things with Henry aren't working out.  He's stuck you in the\n" +
                 "Tower of London until your execution.  You should probably try to get out of here\n" +
                 "while you still can. ");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
 
             while (_keepRunning)
@@ -53,7 +56,9 @@ namespace AnneBoleynEscape
         private void BedMethod()
         {
             Console.Clear();
-            Console.WriteLine("You walk over to the bed.");
+            Console.WriteLine("You walk over to the bed.\n" +
+                "While not as comfortable as those in the royal quarters, it's better than the straw-filled mattresses used by the commoners.");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             Console.Clear();
             Console.WriteLine("What do you want to do Anne? Choose a number:\n" +
@@ -90,6 +95,7 @@ namespace AnneBoleynEscape
                 "She starts to think that maybe Catherine wasn't that bad and Henry might be crazy.\n" +
                 "Anne wakes up to a group of guards in the morning; they take her out to a courtyard\n" +
                 "and cut her head off.  The last thought through her mind is about the overratedness of pious dating.  ");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             Console.Clear();
             YouDied();
@@ -100,6 +106,7 @@ namespace AnneBoleynEscape
             Console.WriteLine("Anne pulls the pillow back, and finds a key.\n" +
                 "She wonders why someone would put a key here, and picks it up.");
             _bedroomKey = true;
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
         }
         private void WalkAwayFromBed()
@@ -107,6 +114,7 @@ namespace AnneBoleynEscape
             Console.Clear();
             Console.WriteLine("Anne has no time for sleep, besides this bed looks like\n" +
                 "its been made for peasants.  Cool pillow though.");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
         }
 
@@ -117,10 +125,12 @@ namespace AnneBoleynEscape
             {
                 Console.WriteLine("The door looks very sturdy.  Anne tries the handle. \n" +
                     "She is not surprised to find that its locked.  Maybe there's a key somewhere.");
+                Console.WriteLine("Press any key to continue...");
             }
             else
             {
                 Console.WriteLine("The key from under the pillow fits the lock.  Anne uses it to leave the room.");
+                Console.WriteLine("Press any key to continue...");
                 Console.ReadLine();
                 //Test
                 HallwayOne();
@@ -134,6 +144,7 @@ namespace AnneBoleynEscape
             Console.Clear();
             Console.WriteLine("Anne starts yelling like a lunatic, no one seems to react.\n" +
                 "She begins to wonder if there are any guards around.");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
         }
         //Hallway test methods
@@ -215,6 +226,7 @@ namespace AnneBoleynEscape
                 "She begins to slowly climb the stairs being careful not to fall.\n" +
                 "She comes to a dead end thats been sealed off.  Putting her ear to the wall\n" +
                 "she thinks she can hear soft crying.  She turns heading back down the stair knowing this is not the right way.");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             Console.Clear();
             Console.WriteLine("Now back in the room below, she sees the only is to continue on to the door across the room that she has not tried yet; hoping that it opens\n" +
@@ -346,9 +358,31 @@ namespace AnneBoleynEscape
             Console.WriteLine("As Anne steps out into the bright morning sunlight, she can see a huge crowd forming a large, semicircle around a central object.\n" +
                 "As she draws closer, two large men wearing black hoods obscuring their faces grab each of her arms. Too late she realizes that she has willingly\n" +
                 "walked herself to her own execution!");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
 
             YouDied();
+        }
+        private void TitlePage()
+        {
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.WriteLine("---------------------------------------------------");
+            Console.Clear();
+            Console.WriteLine("In the year 1856, Henry VIII, King of England, became displeased with his wife\n" +
+                "Anne Boleyn. She was locked in the tower of London until her execution on May 19, 1536.\n\n\n" +
+                "In this game, you will play as Anne Boleyn, and your goal is to escape the tower without being killed.");
+            Console.Beep(400, 400);
+            Console.Beep(460, 900);
+            Console.Beep(485, 400);
+            Console.Beep(520, 900);
+            Console.Beep(560, 300);
+            Console.Beep(520, 300);
+            Console.Beep(470, 900);
+            Console.Beep(400, 400);
+            Console.Beep(320, 1100);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
         }
 
         private void YouDied()
@@ -359,8 +393,23 @@ namespace AnneBoleynEscape
                 "YOU ARE DEAD.\n");
             Console.Beep(700, 700);
             Console.Beep(500, 2000);
-            Console.ReadLine();
-            _keepRunning = false;
+
+            Console.WriteLine("Would you like to try again? Y/N");
+
+            string input = Console.ReadLine();
+
+            switch (input.ToLower())
+            {
+                case "y":
+                    TitlePage();
+                    break;
+                case "n":
+                    _keepRunning = false;
+                    break;
+                default:
+                    _keepRunning = false;
+                    break;
+            }
         }
     }
 }
