@@ -276,7 +276,33 @@ namespace AnneBoleynEscape
             Console.Clear();
             Console.WriteLine("The door swings inward onto a large, lavishly decorated room. Rows upon rows of gaudy outfits hang from large racks.\n" +
                 "The cloths are brightly colored, and are for a very large man. Anne realizes she has stumbled into one of Henry's many rooms,\n" +
-                "each one displaying his many colorful outfits for any occasion.");
+                "each one displaying his many colorful outfits for any occasion. An idea slowly dawns on Anne. Choose one:\n" +
+                "1. No, it's a stupid idea. Best not to get caught in here!\n" +
+                "2. Put on one of Henry's outfits in an attempt to disguise yourself.");
+
+            string input = Console.ReadLine();
+
+            switch (input.ToLower())
+            {
+                case "1":
+                case "one":
+                    MainRoomTwoDoorTwo();
+                    break;
+                case "2":
+                case "two":
+                    Console.Clear();
+                    Console.WriteLine("Anne stands on a stool and dons a large tunic. Looking in the mirror, she realizes that this is only going to work\n" +
+                        "as long as she's standing on the stool. Henry is much taller than her!\n" +
+                        "Suddenly, a flash of movement in the mirror catches her eye, but too late!" +
+                        "\n\n\nA French assassin, mistaking her for Henry, has stabbed HER in the back instead!" );
+                    YouDied();
+                    break;
+                default:
+                    Console.WriteLine("Please enter a valid number");
+                    Console.ReadLine();
+                    MainRoomTwoDoorTwo();
+                    break;
+            }
         }
 
         private void Courtyard()
