@@ -357,6 +357,8 @@ namespace AnneBoleynEscape
             Console.Clear();
             Console.WriteLine("Henry's scheming has caught up with you.\n\n\n" +
                 "YOU ARE DEAD.\n");
+            Console.Beep(700, 700);
+            Console.Beep(500, 2000);
             Console.ReadLine();
             _keepRunning = false;
         }
