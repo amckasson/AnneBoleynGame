@@ -8,8 +8,10 @@ namespace AnneBoleynEscape
 {
     public class Room
     {
+        public bool _isRunning = true;
         public void AlternateHistory()
         {
+            Console.Clear();
             Console.WriteLine("A terrible sound, like thunder, booms inside of the room next to you. Bright lights flash through the cracks\n" +
                 "between the door and the wall.\n\n" +
                 "As you stand there, stunned, the door is slammed off of its hinges from the inside.\n\n" +
@@ -29,6 +31,8 @@ namespace AnneBoleynEscape
                 "and even Henry himself! The crowd is hushed and as your guardian stands behind you, they bow down.\n" +
                 "\"All hail Queen Anne!\" they cheer. And why not? You were always better than Henry ever was on the throne.\n\n\n\n" +
                 "Congratulations, you have survived and changed history!");
+
+            _isRunning = false;
         }
     }
 }

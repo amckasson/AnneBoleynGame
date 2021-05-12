@@ -330,6 +330,7 @@ namespace AnneBoleynEscape
                 case "2":
                 case "two":
                     _arnold.AlternateHistory();
+                    _keepRunning = false;
                     break;
             }
         }
