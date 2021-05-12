@@ -8,7 +8,7 @@ namespace AnneBoleynEscape
 {
     public class Room
     {
-        public bool _isRunning = true;
+        //public bool _isRunning = true; doesnt work this way
         public void AlternateHistory()
         {
             Console.Clear();
@@ -32,7 +32,7 @@ namespace AnneBoleynEscape
                 "\"All hail Queen Anne!\" they cheer. And why not? You were always better than Henry ever was on the throne.\n\n\n\n" +
                 "Congratulations, you have survived and changed history!");
 
-            _isRunning = false;
+            //_isRunning = false; doesnt work this way -- check back in ProgramUI under _arnold for the fix
         }
     }
 }
