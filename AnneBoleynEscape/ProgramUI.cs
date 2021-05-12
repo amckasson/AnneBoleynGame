@@ -132,7 +132,7 @@ namespace AnneBoleynEscape
         {
             Console.Clear();
             Console.WriteLine("Anne starts yelling like a lunatic, no one seems to react.\n" +
-                "She begins to wonder if there are any guards outside");
+                "She begins to wonder if there are any guards around.");
             Console.ReadLine();
         }
         //Hallway test methods
@@ -192,9 +192,11 @@ namespace AnneBoleynEscape
             {
                 case "1":
                 case "one":
+                    MainRoomTwoDoorOne();
                     break;
                 case "2":
                 case "two":
+                    MainRoomTwoDoorTwo();
                     break;
                 default:
                     Console.WriteLine("Please enter a valid number");
@@ -202,6 +204,52 @@ namespace AnneBoleynEscape
                     break;
             }
 
+
+        }
+        private void MainRoomTwoDoorOne()
+        {
+            Console.Clear();
+            Console.WriteLine("Anne finds herself at the foot of a large winding staircase.\n" +
+                "The only light shining inside coming from the room she left behind her.\n" +
+                "She begins to slowly climb the stairs being careful not to fall.\n" +
+                "She comes to a dead end thats been sealed off.  Putting her ear to the wall\n" +
+                "she thinks she can hear soft crying.  She turns heading back down the stair knowing this is not the right way.");
+            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Now back in the room below, she sees the only is to continue on to the door across the room that she has not tried yet; hoping that it opens\n" +
+                "1. Try the other door.\n" +
+                "2. Try yelling to see who comes.");
+            //Console.ReadLine();
+            
+            string input = Console.ReadLine();
+
+            switch (input.ToLower())
+            {
+                case "1":
+                case "one":
+                    MainRoomTwoDoorTwo();
+                    break;
+                case "2":
+                case "Two":
+                    YellMethod();
+                    break;
+                default:
+                    Console.WriteLine("Please choose a valid number");
+                    Console.ReadLine();
+                    MainRoomTwoDoorOne();
+                    break;
+            }
+        }
+
+        private void MainRoomTwoDoorTwo()
+        {
+            Console.Clear();
+            Console.WriteLine("Miraculously, the door opens and leads to a winding starcase going down.\n" +
+                "When she reaches the bottom she is met with a pair of doors.\n" +
+                "One door is to the left, and the other is straight ahead.\n" +
+                "she needs to choose a door.\n" +
+                "1. Door to the left.\n" +
+                "2. Door to the right.");
         }
 
         private void YouDied()
@@ -212,5 +260,6 @@ namespace AnneBoleynEscape
             _keepRunning = false;
             //Dead
         }
+        
     }
 }
