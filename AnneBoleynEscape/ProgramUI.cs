@@ -19,16 +19,16 @@ namespace AnneBoleynEscape
                 "Tower of London until your execution.  You should probably try to get out of here\n" +
                 "while you still can. ");
             Console.ReadLine();
-            
-            while (_keepRunning)
-            { 
-            Console.Clear();
-            Console.WriteLine("Anne, seriously it's time to get moving choose an action:\n" +
-                "1. Go over to the bed.\n" +
-                "2. Go over to the door.\n" +
-                "3. Yell to see if anyone can hear you.");
 
-            string input = Console.ReadLine();
+            while (_keepRunning)
+            {
+                Console.Clear();
+                Console.WriteLine("Anne, seriously it's time to get moving choose an action:\n" +
+                    "1. Go over to the bed.\n" +
+                    "2. Go over to the door.\n" +
+                    "3. Yell to see if anyone can hear you.");
+
+                string input = Console.ReadLine();
 
                 switch (input.ToLower())
                 {
@@ -161,7 +161,7 @@ namespace AnneBoleynEscape
                     Console.WriteLine("Please enter a valid number");
                     Console.ReadLine();
                     HallwayOne();
-                        break;
+                    break;
             }
         }
 
@@ -220,7 +220,7 @@ namespace AnneBoleynEscape
                 "1. Try the other door.\n" +
                 "2. Try yelling to see who comes.");
             //Console.ReadLine();
-            
+
             string input = Console.ReadLine();
 
             switch (input.ToLower())
@@ -245,11 +245,47 @@ namespace AnneBoleynEscape
         {
             Console.Clear();
             Console.WriteLine("Miraculously, the door opens and leads to a winding starcase going down.\n" +
-                "When she reaches the bottom she is met with a pair of doors.\n" +
-                "One door is to the left, and the other is straight ahead.\n" +
-                "she needs to choose a door.\n" +
-                "1. Door to the left.\n" +
-                "2. Door to the right.");
+                "Anne approaches the top of the staircase that corkscrews down to the bottom floor of the tower.\n" +
+                "As she descends, she can hear a crowd cheering outside in the courtyard. Who could be celebrating such a dire situation?\n" +
+                "As she reaches the bottom of the stairs, there is a door to her left, and the double door leading out to the courtyard. Choose a number to explore that room:\n" +
+                "1. Door to the left\n" +
+                "2. Double doors straight ahead");
+
+            string input = Console.ReadLine();
+
+            switch (input.ToLower())
+            {
+                case "1":
+                case "one":
+                    HenryWardrobe();
+                    break;
+                case "2":
+                case "two":
+                    Courtyard();
+                    break;
+                default:
+                    Console.WriteLine("Please enter a valid number");
+                    Console.ReadLine();
+                    MainRoomTwoDoorTwo();
+                    break;
+            }
+        }
+
+        private void HenryWardrobe()
+        {
+            Console.Clear();
+            Console.WriteLine("The door swings inward onto a large, lavishly decorated room. Rows upon rows of gaudy outfits hang from large racks.\n" +
+                "The cloths are brightly colored, and are for a very large man. Anne realizes she has stumbled into one of Henry's many rooms,\n" +
+                "each one displaying his many colorful outfits for any occasion.");
+        }
+
+        private void Courtyard()
+        {
+            Console.Clear();
+            Console.WriteLine("As Anne steps out into the bright morning sunlight, she can see a huge crowd forming a large, semicircle around a central object.\n" +
+                "As she draws closer, two large men wearing black hods obscuring their faces grab each of her arms. Too late she realizes that she has willingly\n" +
+                "walked herself to her own execution!");
+            YouDied();
         }
 
         private void YouDied()
@@ -260,6 +296,6 @@ namespace AnneBoleynEscape
             _keepRunning = false;
             //Dead
         }
-        
+
     }
 }
