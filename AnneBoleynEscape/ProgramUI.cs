@@ -375,7 +375,7 @@ namespace AnneBoleynEscape
                 "Anne Boleyn. She was locked in the tower of London until her execution on May 19, 1536.\n\n\n" +
                 "In this game, you will play as Anne Boleyn, and your goal is to escape the tower without being killed.");
             Console.Beep(400, 400);
-            Console.Beep(470, 900);
+            Console.Beep(460, 900);
             Console.Beep(500, 400);
             Console.Beep(520, 900);
             Console.Beep(560, 300);
