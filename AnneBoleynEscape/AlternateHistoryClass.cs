@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnneBoleynEscape
 {
-    public class Room
+    public class AlternateHistoryClass
     {
         //public bool _isRunning = true; doesnt work this way
         public void AlternateHistory()
@@ -22,9 +22,16 @@ namespace AnneBoleynEscape
             Console.Beep(400, 350);
             Console.Beep(450, 350);
             Console.Beep(480, 1100);
+            Console.Beep(450, 450);
+            Console.Beep(360, 450);
+            Console.Beep(300, 1100);
+            Console.Beep(400, 350);
+            Console.Beep(450, 350);
+            Console.Beep(480, 1100);
             Console.Beep(450, 500);
             Console.Beep(360, 500);
-            Console.Beep(300, 1100);
+            Console.Beep(600, 1100);
+            Console.Beep(530, 1100); ;
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();

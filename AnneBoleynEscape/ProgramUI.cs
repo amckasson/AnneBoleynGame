@@ -8,7 +8,7 @@ namespace AnneBoleynEscape
 {
     public class ProgramUI
     {
-        private Room _arnold = new Room();
+        private AlternateHistoryClass _arnold = new AlternateHistoryClass();
         public bool _keepRunning = true;
         public bool _bedroomKey = false;
         //public bool _isAlive = true;
@@ -368,7 +368,7 @@ namespace AnneBoleynEscape
         private void TitlePage()
         {
             Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ResetColor();
             Console.WriteLine("---------------------------------------------------");
             Console.Clear();
             Console.WriteLine("In the year 1856, Henry VIII, King of England, became displeased with his wife\n" +
