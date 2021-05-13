@@ -11,6 +11,7 @@ namespace AnneBoleynEscape
         private AlternateHistoryClass _arnold = new AlternateHistoryClass();
         public bool _keepRunning = true;
         public bool _bedroomKey = false;
+        public bool _hiddenlever = false;
         //public bool _isAlive = true;
         //public static Room annesRoom = new Room
         public void Run()
@@ -188,6 +189,17 @@ namespace AnneBoleynEscape
             YouDied();
         }
 
+        private void HallwayRoomTwoMainRoomVTwo()
+        {
+            Console.Clear();
+            Console.WriteLine("Anne quickly makes her way to the door where the mechanical\n" +
+                "sounds lead. Hoping against all odds that she will make it out of this nightmare.\n\n" +
+                "Press any key to continue..."
+                );
+            Console.ReadLine();
+            MainRoomTwoDoorTwo();
+        }
+
         private void HallwayRoomTwoMainRoom()
         {
             Console.Clear();
@@ -197,7 +209,8 @@ namespace AnneBoleynEscape
                 " can see that there are two more doors; one to left, and another to the right.\n\n" +
                 "What door would you like to try? Choose a number:\n\n" +
                 "1. Door to the right.\n" +
-                "2. Door to the left.");
+                "2. Door to the left.\n" +
+                "3. Look around the room.");
 
             string input = Console.ReadLine();
 
@@ -211,6 +224,10 @@ namespace AnneBoleynEscape
                 case "two":
                     MainRoomTwoDoorTwo();
                     break;
+                case "3":
+                case "three":
+                    SuitArmour();
+                    break;
                 default:
                     Console.WriteLine("Please enter a valid number");
                     HallwayRoomTwoMainRoom();
@@ -219,6 +236,7 @@ namespace AnneBoleynEscape
 
 
         }
+        //start
         private void MainRoomTwoDoorOne()
         {
             Console.Clear();
@@ -231,10 +249,10 @@ namespace AnneBoleynEscape
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             Console.Clear();
-            Console.WriteLine("Now back in the room below, she sees the only way to continue on is\nthrough door across the room that she has not tried yet; she PRAYS that it opens\n\n" +
+            Console.WriteLine("Now back in the room below, she sees the only way to continue on is\nthrough door across the room that she has not tried yet; she PRAYS that it opens.\n\n" +
                 "Choose a number:\n\n" +
-                "1. Try the other door.\n"
-                //"2. Try yelling to see who comes."
+                "1. Try the other door.\n" +
+                "2. Try looking behind the armour."
                 );
             //Console.ReadLine();
 
@@ -246,10 +264,10 @@ namespace AnneBoleynEscape
                 case "one":
                     MainRoomTwoDoorTwo();
                     break;
-                //case "2":
-                //case "Two":
-                //YellMethod();
-                //break;
+                case "2":
+                case "Two":
+                    SuitArmour();
+                    break;
                 default:
                     Console.WriteLine("Please choose a valid number");
                     Console.ReadLine();
@@ -258,37 +276,59 @@ namespace AnneBoleynEscape
             }
         }
 
+        private void SuitArmour()
+        {
+            Console.Clear();
+            Console.WriteLine("Anne wonders if there could be something behind the suits of antique\n" +
+                "armour. She begins checking hoping to find something that will help her.\n" +
+                "Just as she begining to give up all hope she notices an armour set a bit further\n" +
+                "from the wall than the others. Looking behind she spots a lever.\n\n" +
+                "She pulls and hears a series of gears clicking that lead to the door.\n\n" +
+                "Press any key to continue...");
+            Console.ReadLine();
+            _hiddenlever = true;
+            HallwayRoomTwoMainRoomVTwo();
+        }
         private void MainRoomTwoDoorTwo()
         {
             Console.Clear();
-            Console.WriteLine("Miraculously, the door opens and leads to a winding starcase going down.\n" +
-                "Anne approaches the top of the staircase that corkscrews down to the bottom floor of the tower.\n" +
-                "As she descends, she can hear a crowd cheering outside in the courtyard. Who could be celebrating such a dire situation?\n" +
-                "As she reaches the bottom of the stairs, there is a door to her left, and the double door leading out to the courtyard.\n\n" +
-                " Choose a number to explore that room:\n\n" +
-                "1. Door to the left\n" +
-                "2. Double doors straight ahead");
-
-            string input = Console.ReadLine();
-
-            switch (input.ToLower())
+            if (_hiddenlever == true)
             {
-                case "1":
-                case "one":
-                    HenryWardrobe();
-                    break;
-                case "2":
-                case "two":
-                    Courtyard();
-                    break;
-                default:
-                    Console.WriteLine("Please enter a valid number");
-                    Console.ReadLine();
-                    MainRoomTwoDoorTwo();
-                    break;
+                Console.WriteLine("Miraculously, the door opens and leads to a winding starcase going down.\n" +
+                    "Anne approaches the top of the staircase that corkscrews down to the bottom floor of the tower.\n" +
+                    "As she descends, she can hear a crowd cheering outside in the courtyard. Who could be celebrating such a dire situation?\n" +
+                    "As she reaches the bottom of the stairs, there is a door to her left, and the double door leading out to the courtyard.\n\n" +
+                    " Choose a number to explore that room:\n\n" +
+                    "1. Door to the left\n" +
+                    "2. Double doors straight ahead");
+
+                string input = Console.ReadLine();
+
+                switch (input.ToLower())
+                {
+                    case "1":
+                    case "one":
+                        HenryWardrobe();
+                        break;
+                    case "2":
+                    case "two":
+                        Courtyard();
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a valid number");
+                        Console.ReadLine();
+                        MainRoomTwoDoorTwo();
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("This door wont budge.  There has to be a way to open it.");
+                Console.ReadLine();
+                HallwayRoomTwoMainRoom();
             }
         }
-
+        //end
         private void HenryWardrobe()
         {
             Console.Clear();
